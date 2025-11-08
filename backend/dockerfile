@@ -1,0 +1,11 @@
+# Utiliser une image Java 17
+FROM eclipse-temurin:17-jdk
+
+# Ajouter le jar du backend dans le conteneur
+COPY target/backend-0.0.1-SNAPSHOT.jar app.jar
+
+# Exposer le port 8080
+EXPOSE 8080
+
+# Commande pour lancer l'application
+ENTRYPOINT ["java","-jar","/app.jar"]
